@@ -1,0 +1,27 @@
+.section
+{
+    &__content
+    {
+
+    
+        &-row
+        {
+          
+          &-item
+          {
+            &-about-image
+            {
+                -webkit-clip-path: circle(50%);
+                -moz-clip-path: circle(50%);
+                clip-path: circle(50%);
+            }
+             &-copy
+            {
+               font-size:1.75rem;
+               line-height: 3rem;
+             }
+          }
+        }
+    }
+  }  
+  

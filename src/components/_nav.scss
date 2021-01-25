@@ -1,0 +1,152 @@
+.main-nav
+{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction:column;
+    width:100%;
+    top:0;
+    left:0;
+    z-index: 20;
+
+
+    &__container
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        padding:3rem;
+        z-index: 1;
+
+        @include respond(phone)
+        {
+            background-color: $color-black;
+            padding:3rem 3rem 3rem 4rem;
+        }
+
+
+        &-content
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            &-logo
+            {
+                &-image
+                {
+                    width:5rem;
+
+                    @include respond(phone)
+                    {
+                        width:6rem !important;
+                    }
+                }
+            }
+          
+                &-hamburger:link,
+                &-hamburger:visited
+                {
+                    color:$font-color;
+                    font-size:4rem;
+                    transition:color 0.25s ease-out;
+
+                    @include respond(phone)
+                    {
+                        font-size:6rem !important;
+                    }
+                }
+                &-hamburger:hover,
+                &-hamburger:active
+                {
+                    color:$color-brown;
+                }
+        }
+    }
+    &__dropdown
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0,0,0,0.95);
+        height: 100vh;
+        transition: opacity 0.5s ease-out;
+
+        &__links
+        {
+            &-container
+            {
+                list-style:none;
+                text-align:center;
+                
+                li
+                {
+                    &:not(:last-child)
+                    {
+                        margin-bottom: $margin-bottom-m;
+                    }
+                }
+                &-link-item:link,
+                &-link-item:visited
+                {
+                    display:inline-block;
+                    font-family: 'Abril Fatface', cursive;
+                    text-transform:uppercase;
+                    color:$font-color;
+                    font-size:6rem;
+                    text-decoration: none;
+                    transition:color 0.25s ease-out;
+                }
+                &-link-item:hover,
+                &-link-item:active
+                {
+                    color:$color-brown;
+                }
+                &-link-active
+                {
+                    display: inline-block;
+                    width: 1rem;
+                    height: 4.5rem;
+                    background-color: $font-color;
+                    margin-right: 2rem;
+                    opacity:0;
+                    transition:opacity 0.25s ease-out;
+                }
+            }
+        }
+    }
+}
+
+.hamburger-active
+{
+    display: block;
+}
+.hamburger-deactive
+{
+    display: none;
+}
+.dropdown-active
+{
+    opacity: 1;
+    visibility: visible;
+}
+.dropdown-deactive
+{
+    opacity: 0;
+    visibility: hidden;
+}
+.main-nav-item-active
+{
+    opacity:1 !important;
+}
+.link-active
+{
+    color:$color-brown !important;
+}

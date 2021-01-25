@@ -1,0 +1,193 @@
+
+.section
+{
+  position:relative !important;
+  width:100% !important;
+
+  
+    &__content
+    { 
+        position: relative !important;
+        margin:0 auto !important;
+        width:70%;
+        max-width: 1100px !important;
+        @include respond(phone)
+        {
+          width:80% !important;
+        }
+        @include respond(tablet-port)
+        {
+            width:80% !important;
+        }
+        &-row
+        {
+          display: flex;  
+          justify-content: center;
+          align-items: flex-start;
+          margin: 6rem;
+          letter-spacing: 0.1rem;
+
+          @include respond(phone)
+          {
+            margin: 6rem 3rem;
+          }
+            
+          @include respond(phone)
+          {
+            flex-direction: column !important;
+          }
+          @include respond(tablet-port)
+          {
+            flex-direction: column !important;
+          }
+
+         
+
+          &-item
+          {
+            width:50%;
+            text-align: left;
+
+
+              @include respond(phone)
+              {
+                &:first-child
+                {
+                  margin-bottom:0;
+                }
+              }
+              @include respond(tablet-port)
+              {
+                &:first-child
+                {
+                  margin-bottom:0;
+                }
+              }
+
+            @include respond(phone)
+              {
+                  width:100%;
+                  text-align: center;                
+              }
+              @include respond(tablet-port)
+              {
+                  width:100%;
+                  text-align: center;                
+              }
+
+            &-title
+            {
+              @include respond(phone)
+              {
+                font-size:3.74rem !important;
+
+              }
+              @include respond(tablet-port)
+              {
+                font-size:3.74rem !important;
+              }
+            }
+
+            @include respond(phone)
+            {
+              width:100% !important;
+            }
+             &:not(:last-child)
+             {
+               margin-right:9rem;
+
+               @include respond(phone)
+               {
+                 margin-right:0;
+                 margin-bottom:7rem;
+               }
+               @include respond(tablet-port)
+               {
+                 margin-right:0;
+                 margin-bottom:7rem;
+               }
+             }
+             
+
+             &-next-back-container
+            {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+             &-heading
+             {
+               font-weight: 400;
+               font-size:2rem;
+               line-height: 9rem;
+               text-transform:uppercase;
+             }
+             &-copy
+             {
+               font-size:1.5rem;
+               line-height: 3rem;
+
+               @include respond(phone)
+               {
+                 font-size:2.5rem !important;
+                 line-height:3.5rem !important;
+                 margin-bottom:4rem !important;
+               }
+             }
+          }
+        }
+      }
+  }
+ 
+.gradient-divider
+{
+  position: relative;
+  width: 100%;
+  height: 30rem; 
+  margin-top: 20rem;
+
+  @include respond(phone)
+  {
+    height:17rem;
+  }
+
+  &::before
+  {
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    background: linear-gradient(to right, rgba($color-white, .15), transparent);
+    width:inherit;
+    height:inherit;
+    transform: skewY(-5deg);
+  }
+}
+
+.footer
+{
+  position: relative;
+  background-color: $color-black;
+
+  .social
+    {
+
+        text-align: center;
+        padding:10rem;
+        
+        &__social-link:link,
+        &__social-link:visited
+        {
+            font-size:3.5rem;
+            color:$font-color;
+            transition:color 0.25s ease-out;
+            
+            margin-right:1.5rem;
+        }
+        &__social-link:hover,
+        &__social-link:active
+        {
+            color:$color-brown;
+        }
+    }
+}

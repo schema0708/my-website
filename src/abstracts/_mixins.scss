@@ -1,0 +1,56 @@
+
+@mixin create-box-shadow($xpos,$ypos, $blur, $color, $opacity)
+{
+  box-shadow: $xpos $ypos $blur rgba($color, $opacity);
+}
+
+
+
+/*
+
+- Phone breakpoint max width 600px or 36.5em 0px-600px/16px default font size.
+- Tablet - Potrait breakpoint max width 600px-900px or 56.25em 900px/16px default size.
+- Tablet - Landscape breakpoint max width 900px-1200px or 75em 1200px/16px default size.
+- Desktop - Desktop breakpoint min width 1200px-1800px or 112.25em 1800px/16px default size.
+
+*/
+
+@mixin respond($break-point)
+{
+    @if $break-point == phone {
+
+      @media (max-width:37.5em) // Breakpoint - 0px-600px/16px 0px-600px/16px = 36.5em 
+      {
+        @content;
+      }
+    }
+    @if $break-point == tablet-port {
+      @media (max-width:56.25em) // Breakpoint - 900px/16px 0px-900px  = 56.25em
+      {
+        @content;
+      }
+    }
+    @if $break-point == tablet-land {
+      @media (max-width:75em) // Breakpoint - 900px-1200px 1200px/16px = 75em
+      {
+        @content;
+      }
+    }
+    @if $break-point == desktop {
+      @media (min-width:112.5em) // Breakpoint - 1200px-1800px 1920px/16px = 112.25em
+      {
+        @content;
+      }
+    }
+}
+@mixin center
+{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+  -moz-transform:translate(-50%, -50%);
+  -ms-transform:translate(-50%, -50%);
+  -o-transform:translate(-50%, -50%);
+}

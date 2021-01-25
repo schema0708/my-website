@@ -1,0 +1,52 @@
+.pill-btn:link,
+.pill-btn:visited
+{
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  text-transform:uppercase;
+  text-align: center;
+  padding: 2rem 4rem;
+  border-radius:3rem;
+  color:$font-color;
+  font-size:1.5rem;
+  outline: none;
+  border:1px solid $color-pill-border-color;
+  background-color:$color-brown-dark;
+  transition: background-color .5s ease, color .5s ease;
+
+  @include respond(phone)
+  {
+    font-size: 2.26rem !important;
+    padding: 3rem 4rem !important;
+    border-radius: 4rem !important;
+  }
+
+  &:hover
+  {
+    background-color:$font-color;
+    color: $color-brown-dark;
+  }
+  &:active
+  {
+    background-color:$font-color !important;
+    color: $color-brown-dark !important;
+  }
+}
+.active
+{
+  background-color:$font-color !important;
+  color: $color-brown-dark !important;  
+}
+.arrow-btn
+            {
+                font-size:3.5rem;
+                color:$font-color;
+                cursor: pointer;
+                transition:color 0.25s ease-out; 
+            &:hover
+            {
+              color:$color-brown;
+            }
+          }
+          

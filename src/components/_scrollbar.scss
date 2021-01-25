@@ -1,0 +1,16 @@
+body {
+  scrollbar-width: medium;
+  scrollbar-color: $thumbBG $scrollbarBG;
+
+  &::-webkit-scrollbar {
+    width: 11px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $scrollbarBG;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumbBG;
+    border-radius: 10px;
+    border: 3px solid $scrollbarBG;
+  }  
+}

@@ -1,0 +1,39 @@
+
+  .slideshow-container
+  {
+      margin: 3rem 7rem;
+
+      @include respond(phone)
+      {
+        margin:3rem 0;
+      }
+
+      .react-slideshow-container
+      {
+        position: relative;
+        .default-nav
+        {
+          
+          position: absolute;
+
+          &:first-of-type
+          {
+            left: 9rem;
+          }
+          &:last-of-type
+          {
+            right:9rem;
+          }
+        }
+        .each-slide 
+        {
+            background-color:$color-black;
+
+            img 
+            {
+              width: 100%;
+            }
+        }
+      }
+  }
+  
