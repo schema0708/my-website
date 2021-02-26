@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Footer from './Footer';
 
 import { filterWork } from './data';
 import {  Link, useHistory, withRouter } from "react-router-dom";
@@ -161,21 +162,8 @@ const WorkPage = (props) => {
                    </div>
                </div>
        </section>
-       <footer className='footer'>
-       <div className='section'>
-           <div className='section__content'>
-           <div className='social'>
-           <a className='social__social-link' href='https://www.linkedin.com/in/fgudino/' target='_blank'>
-               <ion-icon name="logo-linkedin"></ion-icon>
-           </a>
-           
-           <a className='social__social-link' href='https://www.instagram.com/abel121677/' target='_blank'>
-               <ion-icon name="logo-instagram"></ion-icon>
-           </a>
-       </div>
-           </div>
-       </div>
-   </footer>
+       <Footer linkedin='https://www.linkedin.com/in/fgudino/' instagram='https://www.instagram.com/abel121677/'/>
+
             </>
         )
     }

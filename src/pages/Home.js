@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {  Link } from "react-router-dom";
 
+import Footer from './Footer';
+
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import 'react-lazy-load-image-component/src/effects/opacity.css';
@@ -9,12 +11,9 @@ import mouseicon from '../img/mouse_icon.svg';
 
 import { filterWork } from './data';
 
-
 import { gsap, ScrollToPlugin } from "gsap/all";
 
 gsap.registerPlugin(ScrollToPlugin);
-
-
 
 class Home extends Component
 {
@@ -43,6 +42,39 @@ class Home extends Component
        if(window.scrollY > 0 ) gsap.to(window, {duration: 2, scrollTo:{y:"#welcome", ease:'power2.inOut', offsetY:100}});
     }
     
+    
+    onScrollToWorks = (e) => {
+        e.preventDefault();
+
+        gsap.to(window, {duration: 2, scrollTo:{y:"#workSection", ease:'power2.inOut', offsetY:70}});
+    }
+    checkImageType = (element) =>
+    {
+        const { title, src, url, type } = element;
+        
+        if(type === 'ad')
+        {
+            return (
+                <Link className='work-link'> 
+                    <LazyLoadImage onClick={(e) => this.props.openBox(e, element)} src={src} effect='opacity' width="100%" alt={title} />
+                </Link>
+               )
+        }else if(type === 'ui/ux'){
+           return ( 
+            <Link className='work-link' to={{pathname:url}}> 
+                     <LazyLoadImage src={src} effect='opacity' width="100%" alt={title} />
+             </Link>
+           )
+        }else if(type === 'games')
+        {
+            return (
+                <Link className='work-link' to={{pathname:url}} target='_blank'> 
+                     <LazyLoadImage src={src} effect='opacity' width="100%" alt={title} />
+                </Link>
+            )
+        }
+    }
+
     onFilterWork = (e, filter, index) =>
     {
         e.preventDefault();
@@ -51,16 +83,12 @@ class Home extends Component
 
         this.setState({images:works, title:filter, activeIndex:index});
     }
-    onScrollToWorks = (e) => {
-        e.preventDefault();
 
-        gsap.to(window, {duration: 2, scrollTo:{y:"#workSection", ease:'power2.inOut', offsetY:70}});
-    }
     render() {
 
 
        return (
-        <React.Fragment>           
+        <>           
                          
                <header id='welcome' className='page-1 home'>
                    <div className='home__welcome'>
@@ -99,33 +127,15 @@ class Home extends Component
                          {this.state.images.map((element, index) => {
                             return (
                                     <div key={index} className='work-item'>
-
-                                         <Link className='work-link' to={{pathname:element.type !== 'ad' ? element.url : '#' }}  
-                                               target={element.target === '_blank' ? element.target : null }> 
-                                               <LazyLoadImage onClick={element.type === 'ad' ? (e) => this.props.openBox(e, element) : null } src={element.src} effect='opacity' width="100%" alt={element.title} />
-                                        </Link>
+                                            {this.checkImageType(element)} 
                                      </div>
                                      )
                         })}
                         </div>
                      </div>
                 </section>
-                <footer className='footer'>
-                <section className='section'>
-                    <section className='section__content'>
-                        <div className='social'>
-                            <a className='social__social-link' href='https://www.linkedin.com/in/fgudino/' target='_blank'>
-                                <ion-icon name="logo-linkedin"></ion-icon>
-                            </a>
-                            
-                            <a className='social__social-link' href='https://www.instagram.com/abel121677/' target='_blank'>
-                                <ion-icon name="logo-instagram"></ion-icon>
-                            </a>
-                        </div>
-                    </section>
-                </section>
-            </footer>
-                </React.Fragment>
+                <Footer linkedin='https://www.linkedin.com/in/fgudino/' instagram='https://www.instagram.com/abel121677/'/>
+                </>
        )   
 
     }

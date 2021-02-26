@@ -2,6 +2,7 @@ import React, { useState, useEffect, isValidElement } from 'react';
 import axios from 'axios';
 import { gsap, ScrollToPlugin } from 'gsap/all';
 import isEmail from 'validator/lib/isEmail';
+import Footer from './Footer';
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -111,21 +112,8 @@ const Contact = props =>
                  </div>
             </div>
             </section>
-            <footer className='footer'>
-                    <section className='section'>
-                        <section className='section__content'>
-                        <div className='social'>
-                        <a className='social__social-link' href='https://www.linkedin.com/in/fgudino/' target='_blank'>
-                            <ion-icon name="logo-linkedin"></ion-icon>
-                        </a>
-                        
-                        <a className='social__social-link' href='https://www.instagram.com/abel121677/' target='_blank'>
-                            <ion-icon name="logo-instagram"></ion-icon>
-                        </a>
-                    </div>
-                </section>
-            </section>
-        </footer>
+            <Footer linkedin='https://www.linkedin.com/in/fgudino/' instagram='https://www.instagram.com/abel121677/'/>
+
             </>
         )   
 }

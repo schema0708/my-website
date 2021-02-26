@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import profile from '../img/about.jpg';
 import { Link } from 'react-router-dom';
 import { Transition } from "react-transition-group";
-
+import Footer from './Footer';
 
 import { gsap, ScrollToPlugin } from 'gsap/all';
 
@@ -48,21 +48,8 @@ class About extends Component
                 
                      </div>
          </section>
-         <footer className='footer'>
-         <div className='section'>
-             <div className='section__content'>
-             <div className='social'>
-             <a className='social__social-link' href='https://www.linkedin.com/in/fgudino/' target='_blank'>
-                 <ion-icon name="logo-linkedin"></ion-icon>
-             </a>
-             
-             <a className='social__social-link' href='https://www.instagram.com/abel121677/' target='_blank'>
-                 <ion-icon name="logo-instagram"></ion-icon>
-             </a>
-         </div>
-             </div>
-         </div>
-     </footer>
+         <Footer linkedin='https://www.linkedin.com/in/fgudino/' instagram='https://www.instagram.com/abel121677/'/>
+
          </>
         )
     }
