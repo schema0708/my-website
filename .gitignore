@@ -120,5 +120,12 @@ dist
 # public
 public/
 public/bundle.js
+# Ignore webpack output bundles and license files
+public/*.bundle.js
+public/*.bundle.js.LICENSE.txt
+public/vendors-*
+public/src_* 
+# keep generated images and static assets
+public/img/
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Node

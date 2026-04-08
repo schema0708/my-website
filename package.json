@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack --mode=development",
     "build": "webpack --mode=production",
+    "preview": "webpack serve --open --mode=production",
     "dev": "webpack serve --open"
   },
   "keywords": [],
@@ -33,6 +34,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "caniuse-lite": "^1.0.30001787",
     "gsap": "^3.6.0",
     "jquery": "^3.5.1",
     "react-lazy-load-image-component": "^1.5.1",
